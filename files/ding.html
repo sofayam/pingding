@@ -1,0 +1,23 @@
+
+
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect();
+        // Listen for message 
+        socket.on('ding', function (data) {
+            document.body.style.background = "red";
+            setTimeout(reload,500)
+        })
+        function reload() {
+            window.location.reload()
+        }
+    </script>
+</head>
+
+<body>
+    DING
+    <audio src="/ding.wav" autoplay>
+        your browser can't do audio
+    </audio>
+</body>
